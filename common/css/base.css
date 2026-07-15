@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  background-color: #fcfcfc;
+  /* 이거 맞는지 모르겠다. 배경색 */
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
