@@ -14,7 +14,6 @@ header {
 
   position: sticky;
   top: 0;
-  /* background-color: aquamarine; */
   background-color: #fff;
 }
 
@@ -42,7 +41,7 @@ header {
   gap: 0.537rem;
 
   color: #3692ff;
-  font-family: "ROKAF Sans";
+  font-family: "ROKAF Sans", sans-serif;
   font-size: 1.602rem;
   font-style: normal;
   font-weight: 700;
@@ -72,10 +71,9 @@ header {
   background: var(--Primary-100, #3692ff);
 
   color: var(--Cool-Gray-100, #f3f4f6);
-  /* pretendard/lg-1rem-semibold */
   font-family: Pretendard;
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.625rem; /* 162.5% */
+  line-height: 1.625rem;
 }
