@@ -5,8 +5,7 @@
 body {
   display: flex;
   width: 100%;
-  /* max-width: 120rem; */
-  padding: 14.4375rem 40rem 17.75rem 40rem;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   background-color: #fcfcfc;
@@ -14,35 +13,30 @@ body {
 
 #login-content {
   display: flex;
-  /* width: 100%; */
-  /* max-width: 40rem; */
-  width: 40rem;
+  max-width: 40rem;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
   flex-shrink: 0;
-
-  /* background-color: aqua; */
-  /* height: 10rem; */
+  margin: 3rem 0;
 }
 
 .login-logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* width: 100%; */
-  margin: 0 auto 2.5rem;
   width: 24.75rem;
   height: 8.25rem;
 
   color: var(--brand-blue, #3692ff);
-  font-family: "ROKAF Sans";
+  font-family: "ROKAF-Sans";
   font-size: 4.1465rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 
-  /* background-color: red; */
+  white-space: nowrap;
 }
 
 .login-logo > img {
@@ -62,8 +56,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
-
   width: 100%;
 }
 
@@ -71,7 +63,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
   gap: 1.5rem;
   width: 100%;
 }
@@ -84,12 +75,11 @@ body {
   width: 100%;
 
   color: var(--Secondary-800, #1f2937);
-  /* pretendard/2lg-18px-bold */
   font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.625rem; /* 144.444% */
+  line-height: 1.625rem;
 }
 
 .login-input input {
@@ -106,12 +96,11 @@ body {
 
 input::placeholder {
   color: var(--Secondary-400, #9ca3af);
-  /* pretendard/lg-16px-regular */
   font-family: Pretendard;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.625rem; /* 162.5% */
+  line-height: 1.625rem;
 }
 
 .login-input input:focus {
@@ -122,7 +111,6 @@ input::placeholder {
 .password-input {
   position: relative;
   display: flex;
-  /* padding-right: 1.5rem; */
 }
 
 .password-toggle {
@@ -146,33 +134,26 @@ input::placeholder {
 
   color: var(--Cool-Gray-100, #f3f4f6);
   text-align: center;
-  /* pretendard/xl-20px-semibold */
-  font-family: Pretendard;
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 600;
   line-height: 2rem; /* 160% */
 
   border-radius: 2.5rem;
-  background: var(--Primary-100, #3692ff);
-}
-
-.login-button:disabled {
-  border-radius: 2.5rem;
   background: var(--Secondary-400, #9ca3af);
 }
 
-/* .login-button:not(:disabled) {
+.login-form:valid .login-button {
   background: var(--Primary-100, #3692ff);
-} */
+  cursor: pointer;
+}
 
 .quick-login {
   display: flex;
   width: 40rem;
   height: 4.625rem;
   padding: 1rem 1.4375rem;
-  /* flex-direction: column; */
-  /* align-items: flex-start; */
   align-items: center;
   gap: 0.625rem;
 
@@ -187,7 +168,6 @@ input::placeholder {
   align-items: center;
 
   color: var(--Secondary-800, #1f2937);
-  /* pretendard/lg-16px-medium */
   font-family: Pretendard;
   font-size: 1rem;
   font-style: normal;
@@ -208,7 +188,6 @@ input::placeholder {
 
 .new-customer {
   color: var(--Secondary-800, #1f2937);
-  /* pretendard/md-14px-medium */
   font-family: Pretendard;
   font-size: 0.875rem;
   font-style: normal;
