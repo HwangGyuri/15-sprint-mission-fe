@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcfcfc;
+}
+
+#login-content {
+  display: flex;
+  max-width: 40rem;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  flex-shrink: 0;
+  margin: 3rem 0;
+}
+
+.login-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 24.75rem;
+  height: 8.25rem;
+
+  color: var(--brand-blue, #3692ff);
+  font-family: "ROKAF-Sans";
+  font-size: 4.1465rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  white-space: nowrap;
+}
+
+.login-logo > img {
+  width: 6.47056rem;
+  height: 6.4925rem;
+}
+
+.login-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  align-self: stretch;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.login-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+
+  color: var(--Secondary-800, #1f2937);
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.625rem;
+}
+
+.login-input input {
+  display: flex;
+  width: 40rem;
+  height: 3.5rem;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  background: var(--Cool-Gray-100, #f3f4f6);
+}
+
+input::placeholder {
+  color: var(--Secondary-400, #9ca3af);
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.625rem;
+}
+
+.login-input input:focus {
+  border: 1px solid var(--brand-blue, #3692ff);
+  outline: none;
+}
+
+.password-input {
+  position: relative;
+  display: flex;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+.login-button {
+  display: flex;
+  width: 40rem;
+  height: 3.5rem;
+  padding: 1rem 7.75rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border: none;
+
+  color: var(--Cool-Gray-100, #f3f4f6);
+  text-align: center;
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem; /* 160% */
+
+  border-radius: 2.5rem;
+  background: var(--Secondary-400, #9ca3af);
+}
+
+.login-form:valid .login-button {
+  background: var(--Primary-100, #3692ff);
+  cursor: pointer;
+}
+
+.quick-login {
+  display: flex;
+  width: 40rem;
+  height: 4.625rem;
+  padding: 1rem 1.4375rem;
+  align-items: center;
+  gap: 0.625rem;
+
+  border-radius: 0.5rem;
+  background: #e6f2ff;
+}
+
+.quick-login-content {
+  display: flex;
+  width: 37.125rem;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--Secondary-800, #1f2937);
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.625rem; /* 162.5% */
+}
+
+.login-sns-icons {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.login-sns-icons img {
+  width: 2.625rem;
+  height: 2.625rem;
+}
+
+.new-customer {
+  color: var(--Secondary-800, #1f2937);
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 171.429% */
+}
+
+.new-customer a {
+  color: var(--Primary-100, #3692ff);
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
