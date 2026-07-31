@@ -17,8 +17,9 @@ a {
 
 @font-face {
   font-family: "ROKAF-Sans";
-  src: url("/common/font/ROKAF.woff2") format("woff2");
-  src: url("/common/font/ROKAF.woff") format("woff");
+  src:
+    url("/common/font/ROKAF.woff2") format("woff2"),
+    url("/common/font/ROKAF.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
