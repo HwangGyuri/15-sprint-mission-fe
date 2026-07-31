@@ -56,7 +56,6 @@ header {
   flex-shrink: 0;
 }
 
-/* .header-info > button { */
 .button-login {
   display: flex;
   width: 8rem;
