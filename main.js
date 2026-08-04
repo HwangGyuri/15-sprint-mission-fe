@@ -6,12 +6,21 @@ import {
   deleteProduct,
 } from "./ProductService.js";
 
-// LIST
+import {
+  getArticleList,
+  getArticle,
+  createArticle,
+  patchArticle,
+  deleteArticle,
+} from "./ArticleService.js";
+
+// ProductService
+// GET LIST
 async function testProductList() {
   const result = await getProductList(1, 10, "");
   console.log(result);
 }
-// testProductList();
+testProductList();
 
 // GET
 async function testProduct(productId) {
@@ -32,7 +41,7 @@ async function testProduct(productId) {
 
   console.log("상품 상세 정보:", result);
 }
-// let productId = 4230;
+let productId = 4230;
 // testProduct(productId);
 
 // POST
@@ -55,7 +64,7 @@ async function testCreateProduct() {
   console.log("생성된 상품: ", createdProduct);
   console.log("생성된 상품 ID:", createdProduct.id);
 }
-// testCreateProduct();
+testCreateProduct();
 
 // PATCH
 async function testPatchProduct() {
@@ -78,7 +87,7 @@ async function testPatchProduct() {
   console.log("변경된 상품: ", patchedProduct);
   console.log("변경된 상품 ID:", patchedProduct.id);
 }
-// testPatchProduct();
+testPatchProduct();
 
 // DELETE
 async function testDeleteProduct() {
@@ -94,3 +103,75 @@ async function testDeleteProduct() {
   console.log("삭제된 상품 ID:", deletedProduct.id);
 }
 testDeleteProduct();
+
+// Article
+// GET LIST
+getArticleList(1, 10, "")
+  .then((articleList) => {
+    if (!articleList) {
+      console.log("아티클 목록을 가져오지 못했습니다.");
+      return;
+    }
+    console.log("아티클 목록: ", articleList);
+  })
+  .catch((error) => {
+    console.error("아티클 목록 오류: ", error.message);
+  });
+
+// GET
+let articleId = 6861;
+getArticle(articleId)
+  .then((article) => {
+    if (!article) {
+      console.log("아티클을 가져오지 못했습니다.");
+      return;
+    }
+    console.log("아티클: ", article);
+  })
+  .catch((error) => {
+    console.error("아티클 오류: ", error.message);
+  });
+
+// POST
+let title = "게시글 제목입니다.";
+let content = "게시글 내용입니다.";
+let image = "https://example.com/...";
+
+createArticle(title, content, image).then((createArticle) => {
+  console.log(createArticle);
+  console.log(createArticle.id);
+});
+
+// PATCH
+let articleId = 6862;
+const articleData = {
+  title: "수정된 게시글 제목입니다.",
+  content: "수정된 게시글 내용입니다.",
+  image: "https://example.com/...",
+};
+
+patchArticle(articleId, articleData)
+  .then((updatedArticle) => {
+    if (!updatedArticle) {
+      console.log("아티클 수정에 실패했습니다.");
+      return;
+    }
+    console.log("수정된 아티클: ", updatedArticle);
+  })
+  .catch((error) => {
+    console.error("아티클 수정 오류: ", error.message);
+  });
+
+// DELETE
+let articleId = 6862;
+deleteArticle(articleId)
+  .then((deletedarticle) => {
+    if (!deletedarticle) {
+      console.log("아티클을 삭제하지 못했습니다.");
+      return;
+    }
+    console.log("아티클: ", deletedarticle);
+  })
+  .catch((error) => {
+    console.error("아티클 오류: ", error.message);
+  });
