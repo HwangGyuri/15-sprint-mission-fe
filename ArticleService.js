@@ -1,11 +1,6 @@
 const BASE_URL = "https://panda-market-api-crud.vercel.app";
 // GET LIST
-export function getArticleList(
-  page = 1,
-  pageSize = 10,
-  orderBy = "recent",
-  keyword = "",
-) {
+export function getArticleList(page = 1, pageSize = 10, keyword = "") {
   const params = new URLSearchParams({
     page,
     pageSize,
@@ -24,7 +19,7 @@ export function getArticleList(
       return response.json();
     })
     .catch((error) => {
-      console.log(error.message);
+      console.error(error.message);
     });
 }
 
