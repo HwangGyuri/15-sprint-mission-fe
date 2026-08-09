@@ -24,15 +24,6 @@ async function testProductList() {
 
 // GET
 async function testProduct(productId) {
-  // const productList = await getProductList(1, 10, "");
-  // if (!productList) {
-  //   console.log("상품 목록을 가져오지 못했습니다.");
-  //   return;
-  // }
-  // console.log("상품 목록: ", productList);
-
-  // const productId = 4230;
-
   const result = await getProduct(productId);
   if (result === undefined) {
     console.log("상품을 가져오지 못했습니다.");
