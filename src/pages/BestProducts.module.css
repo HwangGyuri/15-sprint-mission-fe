@@ -1,0 +1,31 @@
+.bestProductContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: aqua;
+  width: min(100% - 2rem, 75rem);
+  white-space: nowrap;
+}
+
+.bestProductHeader {
+  width: 100%;
+  text-align: left;
+}
+
+.bestProductGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.title {
+  color: var(--Secondary-900, #111827);
+  /* pretendard/xl-20px-bold */
+  font-family: Pretendard;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem; /* 160% */
+  text-align: left;
+}

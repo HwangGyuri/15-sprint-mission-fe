@@ -1,0 +1,139 @@
+.sellProductContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: rgb(198, 213, 255);
+  width: min(100%, 75rem);
+  white-space: nowrap;
+}
+
+.sellProductHeader {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sellProductGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.title {
+  color: var(--Secondary-900, #111827);
+  /* pretendard/xl-20px-bold */
+  font-family: Pretendard;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem; /* 160% */
+  text-align: left;
+
+  align-content: center;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  /* margin-bottom: 20px; */
+}
+
+.searchForm {
+  display: flex;
+  width: 20.3125rem;
+  height: 2.625rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 0.75rem;
+  background: var(--Secondary-100, #f3f4f6);
+  padding: 0.5625rem 1.25rem 0.5625rem 1rem;
+}
+
+.searchForm img {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+.searchFrom input {
+  outline: transparent;
+  border: transparent;
+  background: transparent;
+
+  color: var(--Secondary-400, #9ca3af);
+  background: transparent;
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.625rem;
+}
+
+input {
+  border: 0;
+  border-radius: 0.75rem;
+
+  display: flex;
+  width: 100%;
+  height: 2.625rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+
+  background-color: var(--Secondary-100, #f3f4f6);
+}
+
+.productSubmit {
+  display: flex;
+  height: 2.625rem;
+  padding: 0.75rem 1.4375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.5rem;
+  background: var(--Primary-100, #3692ff);
+
+  color: var(--Cool-Gray-100, #f3f4f6);
+  /* pretendard/lg-16px-semibold */
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.625rem; /* 162.5% */
+}
+
+select {
+  width: 8.125rem;
+  min-width: 8.125rem;
+  height: 2.625rem;
+  padding: 0.75rem 1.25rem;
+  gap: 0.625rem;
+
+  border-radius: 0.75rem;
+  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  background: #fff;
+
+  color: var(--Secondary-800, #1f2937);
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+
+  white-space: nowrap;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('../assets/img/ic_arrow_down.svg');
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+  background-size: 1.5rem 1.5rem;
+}
