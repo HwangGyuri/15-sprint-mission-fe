@@ -1,0 +1,49 @@
+.BtnLogIn {
+  cursor: pointer;
+  white-space: nowrap;
+
+  display: inline-flex;
+  height: 2.625rem;
+  padding: 0.75rem 1.4375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.5rem;
+  background: var(--Primary-100, #3692ff);
+  color: var(--Cool-Gray-100, #f3f4f6);
+  /* pretendard/lg-16px-semibold */
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.625rem; /* 162.5% */
+}
+.BtnLogIn:active {
+  border-radius: 0.5rem;
+  background: var(--Primary-100, #3692ff);
+}
+.BtnLogIn:hover {
+  border-radius: 0.5rem;
+  background: var(--Primary-200, #1967d6);
+}
+/* .small40:click {
+  border-radius: 0.5rem;
+  background: var(--Primary-300, #1251aa);
+} */
+.BtnLogIn:disabled {
+  border-radius: 0.5rem;
+  background: var(--Cool-Gray-400, #9ca3af);
+}
+
+.BtnSmall48 {
+  display: flex;
+  width: 5.5rem;
+  height: 3rem;
+  padding: 0.75rem 1.4375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+
+  border-radius: 0.5rem;
+  background: var(--Primary-100, #3692ff);
+}
