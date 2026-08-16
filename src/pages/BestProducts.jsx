@@ -1,7 +1,7 @@
 import styles from './BestProducts.module.css';
 import BestProductCard from '@/components/ProductCard/BestProductCard';
 
-function BestProducts({ products }) {
+function BestProducts({ products = [] }) {
   return (
     <>
       <section className={styles.bestProductContainer}>
@@ -10,7 +10,6 @@ function BestProducts({ products }) {
         </div>
 
         <div className={styles.bestProductGrid}>
-          {/* <BestProductCard /> */}
           {products.map((product) => (
             <BestProductCard key={product.id} product={product} />
           ))}
