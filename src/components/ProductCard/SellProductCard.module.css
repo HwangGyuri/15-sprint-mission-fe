@@ -1,0 +1,71 @@
+.cardContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  background-color: rgb(6, 252, 6);
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+
+  background-color: #fcfcfc;
+}
+
+.productImgWrapper {
+  width: 13.72113rem;
+  height: 13.72113rem;
+  border-radius: 0.80713rem;
+  background: var(--Cool-Gray-50, #f9fafb);
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.38rem;
+  align-self: stretch;
+
+  background-color: cadetblue;
+}
+
+.productIntro {
+  color: var(--Secondary-800, #1f2937);
+  /* pretendard/md-14px-medium */
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 171.429% */
+}
+
+.productPrice {
+  color: var(--Secondary-800, #1f2937);
+  /* pretendard/lg-16px-bold */
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.625rem; /* 162.5% */
+}
+
+.likeArea {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.likeCount {
+  color: var(--Secondary-600, #4b5563);
+  /* pretendard/xs-12px-medium */
+  font-family: Pretendard;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.125rem; /* 150% */
+}
