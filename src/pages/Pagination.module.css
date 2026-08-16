@@ -1,0 +1,23 @@
+.pagination {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.25rem;
+  /* margin-top: 2.69rem; */
+}
+
+.pageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #fff;
+  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  border-radius: 50%;
+}
+
+.pageButton.active {
+  background: #2f80ed;
+}
