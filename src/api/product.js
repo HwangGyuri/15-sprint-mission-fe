@@ -5,12 +5,12 @@ export async function getProducts(
   page = 1,
   pageSize = 10,
   keyword = '',
-  order = 'recent',
+  orderBy = 'recent',
 ) {
   const params = new URLSearchParams({
     page,
     pageSize,
-    order,
+    orderBy,
   });
 
   if (keyword) {

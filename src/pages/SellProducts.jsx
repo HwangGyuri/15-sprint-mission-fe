@@ -16,7 +16,7 @@ function SellProducts() {
 
   const page = Number(searchParams.get('page')) || INITIAL_PAGE;
 
-  const order = searchParams.get('order') || 'recent';
+  const order = searchParams.get('orderBy') || 'recent';
   const keyword = searchParams.get('keyword') || '';
 
   const [input, setInput] = useState(keyword);
@@ -59,7 +59,7 @@ function SellProducts() {
     const queries = new URLSearchParams(searchParams);
     const nextOrder = event.target.value;
 
-    queries.set('order', nextOrder);
+    queries.set('orderBy', nextOrder);
     queries.set('page', String(INITIAL_PAGE));
 
     setSearchParams(queries);
@@ -75,19 +75,6 @@ function SellProducts() {
   if (error) {
     return <p>판매 상품을 불러오지 못했습니다.</p>;
   }
-
-  // const result = products
-  //   .filter((product) => (keyword ? product.name.includes(keyword) : true))
-  //   .toSorted((a, b) => {
-  //     if (order === 'favorite') {
-  //       return b.favoriteCount - a.favoriteCount;
-  //     }
-
-  //     return new Date(b.createdAt) - new Date(a.createdAt);
-  //     // return order === 'desc'
-  //     //   ? a.favoriteCount - b.favoriteCount
-  //     //   : b.favoriteCount - a.favoriteCount;
-  //   });
 
   return (
     <>
@@ -113,7 +100,7 @@ function SellProducts() {
             </button>
 
             <select
-              name="order"
+              name="orderBy"
               aria-label="정렬"
               value={order || 'recent'}
               onChange={handleOrder}
