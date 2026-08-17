@@ -7,7 +7,11 @@ function BestProductCard({ product }) {
     <article className={styles.cardContainer}>
       <div className={styles.productCard}>
         <div className={styles.productImgWrapper}>
-          <img src={imgBest} alt="베스트상품 이미지" />
+          <img
+            className={styles.productImg}
+            src={imgBest}
+            alt="베스트상품 이미지"
+          />
         </div>
 
         <div className={styles.productInfo}>
