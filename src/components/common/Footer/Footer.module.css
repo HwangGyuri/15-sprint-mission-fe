@@ -1,0 +1,53 @@
+.footer {
+  display: flex;
+  width: 120rem;
+  height: 10rem;
+  padding: 2rem 12.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  background: var(--Secondary-900, #111827);
+  width: 100%;
+  white-space: nowrap;
+  margin: auto 0;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  /* max-width: 95rem; */
+}
+
+.infoLeft {
+  color: var(--Secondary-400, #9ca3af);
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.infoMiddle {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.875rem;
+
+  color: var(--Secondary-200, #e5e7eb);
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.infoRight {
+  display: flex;
+  width: 7.25rem;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
