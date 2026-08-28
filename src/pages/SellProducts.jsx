@@ -1,6 +1,8 @@
 import styles from './SellProducts.module.css';
 import SellProductCard from '@/components/ProductCard/SellProductCard';
 import iconSearch from '@/assets/img/ic_search.svg';
+import iconSort from '@/assets/img/ic_sort.svg';
+import iconArrowDown from '@/assets/img/ic_arrow_down.svg';
 import Pagination from './Pagination';
 
 import { useSearchParams } from 'react-router-dom';
@@ -9,6 +11,10 @@ import { getProducts } from '../api/product';
 import { useDeviceType } from '../hooks/useDeviceType';
 
 const INITIAL_PAGE = 1;
+const ORDER_OPTIONS = [
+  { value: 'recent', label: '최신순' },
+  { value: 'favorite', label: '좋아요순' },
+];
 
 function SellProducts() {
   const deviceType = useDeviceType();
@@ -24,6 +30,18 @@ function SellProducts() {
   const order = searchParams.get('orderBy') || 'recent';
   const keyword = searchParams.get('keyword') || '';
 
+  // 정렬에 사용할 변수
+  function getCurrentOrderLabel() {
+    const currentOrder = order || 'recent';
+    const found = ORDER_OPTIONS.find((option) => option.value === currentOrder);
+
+    if (found) {
+      return found.label;
+    }
+    return '최신순';
+  }
+  const currentOrderLabel = getCurrentOrderLabel();
+
   // 사용자가 검색창에 입력하고 있는 글자 기억
   const [input, setInput] = useState(keyword);
   // 서버에서 가져온 상품 목록
@@ -32,6 +50,8 @@ function SellProducts() {
   const [totalCount, setTotalCount] = useState(0);
   // 상품을 가져올 때 문제 생기면 오류 정보 저장
   const [error, setError] = useState(null);
+  // 정렬 드롭다운 상태
+  const [isSortOpen, setIsSortOpen] = useState(false);
 
   // 서버에서 상품 가져오기
   useEffect(() => {
@@ -79,18 +99,29 @@ function SellProducts() {
   };
 
   // 정렬 방식 바꿨을 때
-  const handleOrder = (event) => {
-    // 현재 주소 정보를 queries에 저장
-    const queries = new URLSearchParams(searchParams);
-    // 사용자가 선택한 정렬 순서가 nextOrder에 저장됨
-    const nextOrder = event.target.value;
+  // const handleOrder = (event) => {
+  //   // 현재 주소 정보를 queries에 저장
+  //   const queries = new URLSearchParams(searchParams);
+  //   // 사용자가 선택한 정렬 순서가 nextOrder에 저장됨
+  //   const nextOrder = event.target.value;
 
+  //   // 변경된 정렬 방법 적용
+  //   queries.set('orderBy', nextOrder);
+  //   // 1페이지부터 보이도록 변경
+  //   queries.set('page', String(INITIAL_PAGE));
+
+  //   setSearchParams(queries);
+  // };
+
+  // 정렬 드롭다운 상태
+  const applyOrder = (nextOrder) => {
+    const queries = new URLSearchParams(searchParams);
     // 변경된 정렬 방법 적용
     queries.set('orderBy', nextOrder);
     // 1페이지부터 보이도록 변경
     queries.set('page', String(INITIAL_PAGE));
-
     setSearchParams(queries);
+    setIsSortOpen(false);
   };
 
   // 페이지 번호를 눌렀을 때 작동
@@ -114,7 +145,6 @@ function SellProducts() {
       <section className={styles.sellProductContainer}>
         <div className={styles.sellProductHeader}>
           <span className={styles.title}>판매 중인 상품</span>
-
           <form onSubmit={handleSubmit}>
             <div className={styles.searchForm}>
               <img src={iconSearch} alt="검색 아이콘" />
@@ -132,7 +162,42 @@ function SellProducts() {
               상품 등록하기
             </button>
 
-            <select
+            <div className={styles.sortWrapper}>
+              {deviceType === 'mobile' ? (
+                <img src={iconSort} alt="정렬"></img>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    className={styles.sortButton}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      setIsSortOpen((prev) => !prev);
+                    }}
+                  >
+                    <span>{currentOrderLabel}</span>
+                    <img src={iconArrowDown} alt="" />
+                  </button>
+                </>
+              )}
+
+              {isSortOpen && (
+                <ul className={styles.sortMenu} role="listbox">
+                  {ORDER_OPTIONS.map((option) => (
+                    <li key={option.value}>
+                      <button
+                        type="button"
+                        onClick={() => applyOrder(option.value)}
+                      >
+                        {option.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            {/* <select
               name="orderBy"
               aria-label="정렬"
               value={order || 'recent'}
@@ -140,7 +205,7 @@ function SellProducts() {
             >
               <option value="recent">최신순</option>
               <option value="favorite">좋아요순</option>
-            </select>
+            </select> */}
           </form>
         </div>
 
