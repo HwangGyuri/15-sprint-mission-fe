@@ -143,71 +143,110 @@ function SellProducts() {
   return (
     <>
       <section className={styles.sellProductContainer}>
-        <div className={styles.sellProductHeader}>
-          <span className={styles.title}>판매 중인 상품</span>
-          <form onSubmit={handleSubmit}>
-            <div className={styles.searchForm}>
-              <img src={iconSearch} alt="검색 아이콘" />
-
-              <input
-                aria-label="검색어"
-                name="keyword"
-                placeholder="검색할 상품을 입력해주세요"
-                onChange={(event) => setInput(event.target.value)}
-                value={input}
-              />
+        {deviceType === 'mobile' ? (
+          <div
+            className={`styles.sellProductHeader styles.sellProductHeaderMobile`}
+          >
+            <div className={styles.headerMobile}>
+              <span className={styles.title}>판매 중인 상품</span>
+              <button className={styles.productSubmit} type="button">
+                상품 등록하기
+              </button>
             </div>
+            <form onSubmit={handleSubmit}>
+              {/* 검색창 */}
+              <div
+                className={`${styles.searchForm} ${styles[`searchForm--mobile`]}`}
+              >
+                <img src={iconSearch} alt="검색 아이콘" />
+                <input
+                  aria-label="검색어"
+                  name="keyword"
+                  placeholder="검색할 상품을 입력해주세요"
+                  onChange={(event) => setInput(event.target.value)}
+                  value={input}
+                />
+              </div>
+              <div className={styles.sortWrapper}>
+                <button
+                  className={styles.sortButtonMobile}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setIsSortOpen((prev) => !prev);
+                  }}
+                >
+                  <img src={iconSort} alt="정렬"></img>
+                </button>
+                {isSortOpen && (
+                  <ul className={styles.sortMenu} role="listbox">
+                    {ORDER_OPTIONS.map((option) => (
+                      <li key={option.value}>
+                        <button
+                          type="button"
+                          onClick={() => applyOrder(option.value)}
+                        >
+                          {option.label}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </form>
+            {/* // mobile 화면 끝 */}
+          </div>
+        ) : (
+          // desktop, tablet 화면 시작
+          <div className={styles.sellProductHeader}>
+            <span className={styles.title}>판매 중인 상품</span>
+            <form onSubmit={handleSubmit}>
+              <div className={styles.searchForm}>
+                <img src={iconSearch} alt="검색 아이콘" />
 
-            <button className={styles.productSubmit} type="button">
-              상품 등록하기
-            </button>
+                <input
+                  aria-label="검색어"
+                  name="keyword"
+                  placeholder="검색할 상품을 입력해주세요"
+                  onChange={(event) => setInput(event.target.value)}
+                  value={input}
+                />
+              </div>
 
-            <div className={styles.sortWrapper}>
-              {deviceType === 'mobile' ? (
-                <img src={iconSort} alt="정렬"></img>
-              ) : (
-                <>
-                  <button
-                    type="button"
-                    className={styles.sortButton}
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      setIsSortOpen((prev) => !prev);
-                    }}
-                  >
-                    <span>{currentOrderLabel}</span>
-                    <img src={iconArrowDown} alt="" />
-                  </button>
-                </>
-              )}
+              <button className={styles.productSubmit} type="button">
+                상품 등록하기
+              </button>
 
-              {isSortOpen && (
-                <ul className={styles.sortMenu} role="listbox">
-                  {ORDER_OPTIONS.map((option) => (
-                    <li key={option.value}>
-                      <button
-                        type="button"
-                        onClick={() => applyOrder(option.value)}
-                      >
-                        {option.label}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
+              <div className={styles.sortWrapper}>
+                <button
+                  type="button"
+                  className={styles.sortButton}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setIsSortOpen((prev) => !prev);
+                  }}
+                >
+                  <span>{currentOrderLabel}</span>
+                  <img src={iconArrowDown} alt="" />
+                </button>
 
-            {/* <select
-              name="orderBy"
-              aria-label="정렬"
-              value={order || 'recent'}
-              onChange={handleOrder}
-            >
-              <option value="recent">최신순</option>
-              <option value="favorite">좋아요순</option>
-            </select> */}
-          </form>
-        </div>
+                {isSortOpen && (
+                  <ul className={styles.sortMenu} role="listbox">
+                    {ORDER_OPTIONS.map((option) => (
+                      <li key={option.value}>
+                        <button
+                          type="button"
+                          onClick={() => applyOrder(option.value)}
+                        >
+                          {option.label}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </form>
+          </div>
+        )}
 
         {/* 상품 카드 보여주기 */}
         <div
