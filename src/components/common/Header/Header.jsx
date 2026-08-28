@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import logoImg from '../../../assets/img/logo_pandaFace.svg';
 import { LoginBtn } from '../Button/LoginButton';
+import { useDeviceType } from '../../../hooks/useDeviceType';
 
 function Header() {
+  const deviceType = useDeviceType();
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${styles[`header--${deviceType}`]}`}>
       <div className={styles.headerContainer}>
         <div className={styles.headerInfo}>
           <Link to="/" className={styles.logo}>

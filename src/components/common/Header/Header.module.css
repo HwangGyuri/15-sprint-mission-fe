@@ -1,12 +1,23 @@
 .header {
+  /* position: sticky; */
   display: flex;
   width: 100%;
-  padding: 0 12.5rem;
-  justify-content: space-between;
+  /* padding: 0 12.5rem; */
+  min-width: 24rem;
+  justify-content: center;
   align-items: center;
-
   background-color: #fff;
   border-bottom: 1px solid #dfdfdf;
+}
+/* 반응형 화면 구현 */
+.header--desktop {
+  padding: 0 12.5rem;
+}
+.header--tablet {
+  padding: 0 1.5rem;
+}
+.header--mobile {
+  padding: 0 1rem;
 }
 
 .headerContainer {
@@ -14,12 +25,17 @@
   width: 100%;
   align-items: center;
   gap: 1.5rem;
+  max-width: 95rem;
+  justify-content: space-between;
+}
+
+/* 로그인버튼 변형 방지 */
+.headerContainer > :last-child {
   flex-shrink: 0;
 }
 
 .headerInfo {
   display: flex;
-  width: 100%;
   align-items: center;
 }
 

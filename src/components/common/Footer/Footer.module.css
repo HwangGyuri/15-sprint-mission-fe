@@ -1,6 +1,6 @@
 .footer {
   display: flex;
-  width: 120rem;
+  /* width: 120rem; */
   height: 10rem;
   padding: 2rem 12.5rem;
   flex-direction: column;
@@ -11,6 +11,10 @@
   white-space: nowrap;
   margin: auto 0;
 }
+.footer--mobile {
+  padding: 2rem 1rem;
+  white-space: normal;
+}
 
 .footerContainer {
   display: flex;
@@ -18,7 +22,11 @@
   align-items: center;
   align-self: stretch;
   width: 100%;
-  /* max-width: 95rem; */
+}
+.footerContainer--mobile {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 1.5rem;
 }
 
 .infoLeft {
@@ -29,6 +37,12 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+.infoLeft--mobile {
+  flex-basis: 100%;
+  white-space: normal;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .infoMiddle {
@@ -50,4 +64,9 @@
   width: 7.25rem;
   align-items: flex-start;
   gap: 0.75rem;
+}
+
+.infoMiddle,
+.infoRight {
+  white-space: nowrap;
 }
