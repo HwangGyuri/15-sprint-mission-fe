@@ -1,18 +1,14 @@
-import Layout from './components/common/Layout/Layout';
-import BestProducts from './pages/BestProducts';
-import SellProducts from './pages/SellProducts';
+import { Route, Routes } from 'react-router-dom';
+import Landing from './pages/Landing';
+import Items from './pages/Items';
 import './App.css';
 
 function App() {
   return (
-    <div>
-      <Layout>
-        <div className="bodyBox">
-          <BestProducts />
-          <SellProducts />
-        </div>
-      </Layout>
-    </div>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/items" element={<Items />} />
+    </Routes>
   );
 }
 
