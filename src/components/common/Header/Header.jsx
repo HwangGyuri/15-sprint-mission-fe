@@ -18,7 +18,7 @@ function Header() {
             <Link to="/" className={styles.navContainer}>
               자유게시판
             </Link>
-            <Link to="/" className={styles.navContainer}>
+            <Link to="/items" className={styles.navContainer}>
               중고마켓
             </Link>
           </nav>

@@ -5,7 +5,7 @@ import iconSort from '@/assets/img/ic_sort.svg';
 import iconArrowDown from '@/assets/img/ic_arrow_down.svg';
 import Pagination from './Pagination';
 
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getProducts } from '../api/product';
 import { useDeviceType } from '../hooks/useDeviceType';
@@ -17,6 +17,10 @@ const ORDER_OPTIONS = [
 ];
 
 function SellProducts() {
+  const navigate = useNavigate();
+  const handleGoToRegistration = () => {
+    navigate('/registration');
+  };
   const deviceType = useDeviceType();
 
   let pageSize =
@@ -98,21 +102,6 @@ function SellProducts() {
     setSearchParams(queries);
   };
 
-  // 정렬 방식 바꿨을 때
-  // const handleOrder = (event) => {
-  //   // 현재 주소 정보를 queries에 저장
-  //   const queries = new URLSearchParams(searchParams);
-  //   // 사용자가 선택한 정렬 순서가 nextOrder에 저장됨
-  //   const nextOrder = event.target.value;
-
-  //   // 변경된 정렬 방법 적용
-  //   queries.set('orderBy', nextOrder);
-  //   // 1페이지부터 보이도록 변경
-  //   queries.set('page', String(INITIAL_PAGE));
-
-  //   setSearchParams(queries);
-  // };
-
   // 정렬 드롭다운 상태
   const applyOrder = (nextOrder) => {
     const queries = new URLSearchParams(searchParams);
@@ -149,7 +138,11 @@ function SellProducts() {
           >
             <div className={styles.headerMobile}>
               <span className={styles.title}>판매 중인 상품</span>
-              <button className={styles.productSubmit} type="button">
+              <button
+                className={styles.productSubmit}
+                type="button"
+                onClick={handleGoToRegistration}
+              >
                 상품 등록하기
               </button>
             </div>
@@ -202,7 +195,6 @@ function SellProducts() {
             <form onSubmit={handleSubmit}>
               <div className={styles.searchForm}>
                 <img src={iconSearch} alt="검색 아이콘" />
-
                 <input
                   aria-label="검색어"
                   name="keyword"
@@ -212,7 +204,11 @@ function SellProducts() {
                 />
               </div>
 
-              <button className={styles.productSubmit} type="button">
+              <button
+                className={styles.productSubmit}
+                type="button"
+                onClick={handleGoToRegistration}
+              >
                 상품 등록하기
               </button>
 

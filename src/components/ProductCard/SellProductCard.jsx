@@ -1,6 +1,6 @@
 import styles from './SellProductCard.module.css';
 import imgHeart from '@/assets/img/ic_heart.svg';
-import imgSell from '@/assets/img/img_sell_sample.svg';
+import imgSell from '@/assets/img/img_default.svg';
 
 function SellProductCard({ product }) {
   return (

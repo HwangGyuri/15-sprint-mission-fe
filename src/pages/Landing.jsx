@@ -4,6 +4,7 @@ import imgHomeTop from '@/assets/img/landing/Img_home_top.png';
 import imgHome1 from '@/assets/img/landing/Img_home_01.png';
 import imgHome2 from '@/assets/img/landing/Img_home_02.png';
 import imgHome3 from '@/assets/img/landing/Img_home_03.png';
+import imgHomeBottom from '@/assets/img/landing/Img_home_bottom.png';
 
 function LandingSection({ imgSrc, sectionType, sectionText, landingScript }) {
   if (sectionType === 'Search') {
@@ -100,7 +101,16 @@ function Landing() {
           />
         </div>
         <section className={styles.banner}>
-          믿을 수 있는 판다마켓 중고 거래
+          <div className={styles.bannerContentBox}>
+            <div className={styles.bannerContent}>
+              <div className={styles.bannerContentText}>
+                믿을 수 있는
+                <br />
+                판다마켓 중고 거래
+              </div>
+            </div>
+            <img src={imgHomeBottom} alt="배너이미지" />
+          </div>
         </section>
       </main>
     </Layout>
