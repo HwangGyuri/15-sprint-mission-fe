@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 import logoImg from '../../../assets/img/logo_pandaFace.svg';
 import { LoginBtn } from '../Button/LoginButton';
@@ -18,9 +18,15 @@ function Header() {
             <Link to="/" className={styles.navContainer}>
               자유게시판
             </Link>
-            <Link to="/items" className={styles.navContainer}>
+            <NavLink
+              to="/items"
+              end
+              className={({ isActive }) =>
+                `${styles.navContainer} ${isActive ? styles.active : ''}`
+              }
+            >
               중고마켓
-            </Link>
+            </NavLink>
           </nav>
         </div>
         <LoginBtn />

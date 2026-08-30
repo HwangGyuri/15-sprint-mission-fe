@@ -1,13 +1,13 @@
 import styles from './SellProductCard.module.css';
 import imgHeart from '@/assets/img/ic_heart.svg';
-import imgSell from '@/assets/img/img_default.svg';
+import imgDefault from '@/assets/img/img_default.svg';
 
 function SellProductCard({ product }) {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.productCard}>
         <div className={styles.productImgWrapper}>
-          <img src={imgSell} alt="판매 중인 상품 이미지" />
+          <img src={imgDefault} alt="판매 중인 상품 이미지" />
         </div>
 
         <div className={styles.productInfo}>

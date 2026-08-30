@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  background-color: rgb(198, 213, 255);
+  /* background-color: rgb(198, 213, 255); */
   width: min(100% - 1rem, 75rem);
   /* white-space: nowrap; */
 }

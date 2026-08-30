@@ -27,3 +27,19 @@ export async function getProducts(
 
   return response.json();
 }
+
+export const createProduct = async (postData) => {
+  const response = await fetch(`${BASE_URL}/products`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(postData),
+  });
+
+  if (!response.ok) {
+    throw new Error('게시물 추가에 실패했습니다.');
+  }
+
+  return response.json();
+};

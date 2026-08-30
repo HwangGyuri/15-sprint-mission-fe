@@ -13,7 +13,7 @@ import { useDeviceType } from '../hooks/useDeviceType';
 const INITIAL_PAGE = 1;
 const ORDER_OPTIONS = [
   { value: 'recent', label: '최신순' },
-  { value: 'favorite', label: '좋아요순' },
+  // { value: 'favorite', label: '좋아요순' },
 ];
 
 function SellProducts() {
